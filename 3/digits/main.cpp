@@ -1,11 +1,9 @@
 #include <stdio.h>
 
-// Calculate number of digits in natural N
-
+// Calculate number of digits in natural number N
 
 int main()
 {
-
     int n;
     int sum=0;
     int res = 1;
@@ -19,7 +17,6 @@ int main()
         ++sum;
         k *=10;
     }
-
 
     printf("Number %d has %d digits\n", n, sum);
 }

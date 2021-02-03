@@ -4,8 +4,6 @@
 // Converts number N from decimal to binary
 
 
-
-
 int main()
 {
 
@@ -16,7 +14,6 @@ int main()
     printf ("Please enter number N ");
     scanf("%d",&n);
 
-
     while(n!=0)
     {
         res = n%2;
@@ -26,6 +23,4 @@ int main()
     }
 
    printf("Tne binary number is: %d\n",bin);
-
-
 }

@@ -4,7 +4,6 @@
 
 int main()
 {
-
     int a;
     int b;
     int c;
@@ -23,16 +22,14 @@ int main()
 while ((n<=a)&&(n<=b)&&(n<=c))
 {
 
-if(!((a%n)||(b%n)||(c%n))){
-    found = true;
-    break;
+    if(!((a%n)||(b%n)||(c%n))){
+                 found = true;
+              break;
+    }
+    ++n;
 }
 
-++n;
-
-}
 
 printf("The Least Common Divisor is %d\n",found?n:1 );
-
 
 }

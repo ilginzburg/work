@@ -1,10 +1,6 @@
 #include <stdio.h>
 
-
 // Swap MSB and LSB of natural number N
-
-
-
 
 int main()
 {
@@ -32,10 +28,8 @@ int main()
   msb = n/k;
   lsb = n%10;
 
-   int swaped = lsb*k+((n-lsb+msb)%k);
+  int swaped = lsb*k+((n-lsb+msb)%k);
 
-
-   printf("Tne new number is: %d\n",swaped);
-
+  printf("Tne new number is: %d\n",swaped);
 
 }
