@@ -16,6 +16,10 @@ int main()
     double d;
     double a;
 
+    double circArr = pi*r*r; //Circle area
+    double trianArr = a*a*(sqrt(3)/4); //equi triangle area
+    double sqArr = d*d; //square area
+
     printf("Please enter radius  ");
     scanf(" %lf", &r);
     printf("\n\tRadius r = %f\n\n",r);
@@ -31,9 +35,9 @@ int main()
     printf ("The figure of maximal area is a ");
 
 
-    (pi*r*r) > (a*a*(sqrt(3)/4)) ?
-                d*d > (pi*r*r) ?
+    circArr > trianArr ?
+                sqArr > circArr ?
                     printf ("square.\n\n") : printf ("circle.\n\n")
-    :  (a*a*(sqrt(3)/4)) > d*d ?
+    :  trianArr > sqArr ?
                         printf ("triangle.\n\n") : printf ("square.\n\n");
 }
