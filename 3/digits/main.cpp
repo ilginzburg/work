@@ -6,18 +6,14 @@ int main()
 {
     int n;
     int sum=0;
-    int res = 1;
-    int k = 10;
     printf ("Please enter number N ");
     scanf("%d",&n);
-
-    while(res != 0)
+    printf("Number %d ", n);
+    while(n != 0)
     {
-        res = n/k;
+        n = n/10;
         ++sum;
-        k *=10;
     }
-
-    printf("Number %d has %d digits\n", n, sum);
+    printf("has %d digits\n", sum);
 }
 
