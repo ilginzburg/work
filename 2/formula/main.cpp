@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <math.h>
 #define _USE_MATH_DEFINES
 
@@ -14,7 +14,7 @@ int main()
     double y;
 
     printf("Please enter x ");
-    scanf(" %lf", &x);
+    scanf("%lf", &x);
     printf("\n\tX = %f\n",x);
 
 
