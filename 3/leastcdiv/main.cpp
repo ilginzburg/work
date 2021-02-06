@@ -19,17 +19,18 @@ int main()
     printf ("\nPlease enter number C ");
     scanf("%d",&c);
 
-while ((n<=a)&&(n<=b)&&(n<=c))
-{
+    while ((n<=a)&&(n<=b)&&(n<=c))
+        {
 
-    if(!((a%n)||(b%n)||(c%n))){
-                 found = true;
-              break;
-    }
-    ++n;
-}
+             if(!((a%n)||(b%n)||(c%n)))
+             {
+                found = true;
+                break;
+             }
+             ++n;
+        }
 
 
-printf("The Least Common Divisor is %d\n",found?n:1 );
+printf("The Least Common Divisor is %d\n",found ? n : 1);
 
 }
