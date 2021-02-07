@@ -4,9 +4,9 @@
 
 int main()
 {
-    char s[1024];
-    int op_count = 0;
-    int cl_count = 0;
+    char s[32];
+    int j = 0;
+    bool isCorrect = true;
 
     printf("Enter string\n");
     scanf("%[^\n]%*c",s);
@@ -14,9 +14,42 @@ int main()
     for(int i=0; i < s[i]; ++i)
       {
         if(s[i] == '(')
-            ++op_count;
-        if(s[i] == ')')
-            ++cl_count;
+        {
+            if (j<i)
+                j=i;
+           for (j; j < s[j]; ++j)
+            {
+                if(s[j] == ')')
+                {
+                    isCorrect = true;
+                    ++j;
+                    break;
+                }
+              isCorrect = false;
+            }
+        }
       }
-    (op_count == cl_count) ? printf("\nYes\n") : printf("\nNo\n");
+
+    j = sizeof(s);
+
+    for(int i=sizeof(s); i >=0; --i)
+      {
+        if(s[i] == ')')
+        {
+            if (j>i)
+                j=i;
+           for (j; j >= 0; --j)
+            {
+                if(s[j] == '(')
+                {
+                    isCorrect = true;
+                    --j;
+                    break;
+                }
+              isCorrect = false;
+            }
+        }
+      }
+
+    isCorrect ? printf("\nYes\n") : printf("\nNo\n");
 }
