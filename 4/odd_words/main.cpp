@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 // Remove odd length words from the string
 
 int main()

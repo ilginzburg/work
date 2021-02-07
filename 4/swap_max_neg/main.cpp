@@ -6,14 +6,12 @@
 
 int main()
 {
-
     constexpr int SIZE = 40;
     srand (time(0));
     int M[SIZE];
     int max_val_idx = 0;
     int last_neg_idx = 0;
     int tmp;
-
     //find max
     for(int i=0; i<SIZE; ++i)
     {
@@ -26,15 +24,14 @@ int main()
     // find last negative val and replace
     for (int i=SIZE-1; i>=0; --i)
         {
-
-            if(M[i] < 0){
+            if(M[i] < 0)
+            {
                 last_neg_idx = i;
                 tmp = M[max_val_idx];
                 M[max_val_idx] = M[last_neg_idx];
                 M[last_neg_idx] = tmp;
                 break;
             }
-
         }
 
     // print new array
@@ -42,5 +39,4 @@ int main()
     {
         printf("%d ",M[i]);
     }
-
 }
