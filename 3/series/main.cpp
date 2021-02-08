@@ -13,8 +13,8 @@
 
 int main()
 {
-    int factorial_even = 1;  //(2n)!! = 1,2,8,48,...
-    int factorial_odd = 1;  //(2n-1)!! = 1,1,3,15,...
+    double factorial_even = 1.0;  //(2n)!! = 1,2,8,48,...
+    double factorial_odd = 1.0;  //(2n-1)!! = 1,1,3,15,...
     double x;
     double y = 0;
 
@@ -31,7 +31,5 @@ int main()
        y += step;
      }
 
-  //printf("Tne factorial_even is: %d\n",factorial_even);
-  //printf("Tne factorial_odd is: %d\n",factorial_odd);
   printf ("The sum of the series is: %f\n",y);
 }
