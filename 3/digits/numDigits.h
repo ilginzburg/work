@@ -1,0 +1,2 @@
+
+int calcDigits(int n);
