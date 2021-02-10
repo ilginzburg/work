@@ -1,24 +1,15 @@
-#include <iostream>
-#include <math.h>
-#define _USE_MATH_DEFINES
+#include "maxFigure.h"
 
-// This program finds figure with maximal area between 3:
+// Find maximal area of 3 figures:
 // 1) circle with radius r   (s = pi*r^2)
 // 2) square with side   d   (s = d^2)
-// 3) equilateral triangle with side a. (s = (a^2)*(sqrt(3)/4))
-
-
+// 3) equilateral triangle with side a (s = (a^2)*(sqrt(3)/4))
 
 int main()
 {
-    const double  pi = M_PI;
     double r;
     double d;
     double a;
-
-    double circArr = pi*r*r; //Circle area
-    double trianArr = a*a*(sqrt(3)/4); //equi triangle area
-    double sqArr = d*d; //square area
 
     printf("Please enter radius  ");
     scanf(" %lf", &r);
@@ -32,12 +23,18 @@ int main()
     scanf(" %lf", &a);
     printf("\n\tTriangle side = %f\n\n",a);
 
-    printf ("The figure of maximal area is a ");
+    printf("\n\tThe figure of maximal area is:");
 
+    findMaxFigure(r, d, a);
+
+
+/*
 
     circArr > trianArr ?
                 sqArr > circArr ?
                     printf ("square.\n\n") : printf ("circle.\n\n")
     :  trianArr > sqArr ?
                         printf ("triangle.\n\n") : printf ("square.\n\n");
+
+*/
 }
