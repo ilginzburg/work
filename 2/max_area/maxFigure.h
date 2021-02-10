@@ -3,5 +3,5 @@
 #include <math.h>
 #define _USE_MATH_DEFINES
 
-void findMaxFigure(double r, double d, double a); //print max area figure name
+void findMaxFigure(double r, double d, double a, char * str); //print max area figure name
 

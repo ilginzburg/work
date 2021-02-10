@@ -25,7 +25,11 @@ int main()
 
     printf("\n\tThe figure of maximal area is:");
 
-    findMaxFigure(r, d, a);
+    char str[40];
+
+    findMaxFigure(r, d, a, str);
+
+    printf("%s",str);
     printf("\n\n\n");
 
 }
