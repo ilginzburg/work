@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "calcDiv.h"
 
 // Calculate Least Common Divisor of 3 natural numbers A,B,C
 
@@ -7,8 +8,6 @@ int main()
     int a;
     int b;
     int c;
-    int n=2;
-    bool found = false;
 
     printf ("Please enter number A ");
     scanf("%d",&a);
@@ -19,18 +18,8 @@ int main()
     printf ("\nPlease enter number C ");
     scanf("%d",&c);
 
-    while ((n<=a)&&(n<=b)&&(n<=c))
-        {
+    int cdiv = calclcDiv(a,b,c);
 
-             if(!((a%n)||(b%n)||(c%n)))
-             {
-                found = true;
-                break;
-             }
-             ++n;
-        }
-
-
-printf("The Least Common Divisor is %d\n",found ? n : 1);
+printf("The Least Common Divisor is %d\n",cdiv);
 
 }
