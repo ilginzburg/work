@@ -26,15 +26,6 @@ int main()
     printf("\n\tThe figure of maximal area is:");
 
     findMaxFigure(r, d, a);
+    printf("\n\n\n");
 
-
-/*
-
-    circArr > trianArr ?
-                sqArr > circArr ?
-                    printf ("square.\n\n") : printf ("circle.\n\n")
-    :  trianArr > sqArr ?
-                        printf ("triangle.\n\n") : printf ("square.\n\n");
-
-*/
 }
