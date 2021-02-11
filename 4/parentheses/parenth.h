@@ -1,0 +1,2 @@
+
+bool checkPar(char* s);
