@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "parenth.h"
 
-// Check if parentheses in string are in legal order and equal
+// Check if all parentheses in string are in legal order and equal
 
 int main()
 {
