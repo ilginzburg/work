@@ -8,10 +8,11 @@
 
 int main()
 {
+
+
     constexpr int SIZE = 7;
     srand (time(0));
     int matrix[SIZE][SIZE];
-    int new_matrix[SIZE][SIZE];
     int k;
 
     for (int i=0; i<SIZE; ++i)
@@ -20,12 +21,6 @@ int main()
             matrix[i][j] = rand()%100;
           }
 
-    for (int i=0; i<SIZE; ++i)
-      {
-        for (int j=0; j<SIZE; ++j)
-            printf ("%2d ",matrix[i][j]);
-        printf("\n");
-      }
 
     printf("\n\n\n\n");
     printMatrix  ((int*)matrix, SIZE);
@@ -34,14 +29,15 @@ int main()
     scanf("%d",&k);
     printf("\n\n\n");
 
-    replaceRowCol((int *)matrix, (int *)new_matrix, k, SIZE);
+    replaceRowCol((int *)matrix, k, SIZE);
 
 
     printf("\n\n\n");
 
-   printMatrix  ((int*)new_matrix, SIZE);
+    printMatrix  ((int*)matrix, SIZE);
 
     printf("The new matrix is ");
-    checkSymmetr((int *)new_matrix, SIZE) ? printf("") : printf("not ");
+    checkSymmetr((int *)matrix, SIZE) ? printf("") : printf("not ");
     printf("symmetric\n");
+
 }

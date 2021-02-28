@@ -12,9 +12,9 @@ TEST (replaceRowColtest,test1)
                      {1,2,12,4,5,6,7},
                      {1,2,12,4,5,6,7},
                      {1,2,12,4,5,6,7}};
- int new_matrix[7][7];
- replaceRowCol((int*)matrix, (int*)new_matrix, k, SIZE);
- EXPECT_EQ (new_matrix[2][0], 12);
+
+ replaceRowCol((int*)matrix,  k, SIZE);
+ EXPECT_EQ (matrix[2][0], 12);
 }
 
 
@@ -29,9 +29,9 @@ TEST (replaceRowColtest,test2)
                      {1,2,12,4,5,6,7},
                      {1,2,12,4,5,6,7},
                      {1,2,12,4,5,6,7}};
- int new_matrix[7][7];
- replaceRowCol((int*)matrix, (int*)new_matrix, k, SIZE);
- EXPECT_EQ (new_matrix[0][3], 1);
+
+ replaceRowCol((int*)matrix,  k, SIZE);
+ EXPECT_EQ (matrix[0][3], 1);
 }
 
 
@@ -47,9 +47,10 @@ TEST (replaceRowColtest,test3)
                      {1,2,12,4,5,6,7},
                      {1,2,12,4,5,6,7},
                      {1,2,12,4,5,6,7}};
- int new_matrix[7][7];
- replaceRowCol((int*)matrix, (int*)new_matrix, k, SIZE);
- EXPECT_EQ (new_matrix[1][6], 2);
+
+ replaceRowCol((int*)matrix, k, SIZE);
+ printMatrix  ((int*)matrix, SIZE);
+ EXPECT_EQ (matrix[1][6], 2);
 }
 
 
