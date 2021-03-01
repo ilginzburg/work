@@ -1,5 +1,6 @@
 #include "opArr.h"
 
+
 int findMaxIdx(int *arr, int size)
 {
     int max_val_idx = 0;
@@ -20,7 +21,6 @@ int findLastNegIdx(int *arr, int size)
                 return i;
                 break;
             }
-
         }
     return -1;
 }
