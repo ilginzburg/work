@@ -49,7 +49,6 @@ TEST (replaceRowColtest,test3)
                      {1,2,12,4,5,6,7}};
 
  replaceRowCol((int*)matrix, k, SIZE);
- printMatrix  ((int*)matrix, SIZE);
  EXPECT_EQ (matrix[1][6], 2);
 }
 
