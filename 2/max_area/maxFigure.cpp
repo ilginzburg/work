@@ -2,7 +2,7 @@
 
 
 void findMaxFigure(double r, double d, double a, char * str)
- {
+{
     const double  pi = M_PI;
     double circArr   = pi*r*r;          //circle area
     double trianArr  = a*a*(sqrt(3)/4); //equi triangle area
@@ -13,7 +13,7 @@ void findMaxFigure(double r, double d, double a, char * str)
                         "square"   : "circle"
     :  trianArr > sqArr ?
                         "triangle" : "square");
- }
+}
 
 
 
