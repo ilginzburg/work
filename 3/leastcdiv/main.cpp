@@ -20,6 +20,6 @@ int main()
 
     int cdiv = calclcDiv(a,b,c);
 
-printf("The Least Common Divisor is %d\n",cdiv);
+    printf("The Least Common Divisor is %d\n",cdiv);
 
 }

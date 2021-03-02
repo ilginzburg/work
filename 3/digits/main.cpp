@@ -10,6 +10,5 @@ int main()
     scanf("%d",&n);
     int sum = calcDigits(n);
     printf("Number %d has %d digits\n", n, sum);
-
 }
 

@@ -13,5 +13,4 @@ int calclcDiv(int a, int b, int c)
              ++n;
         }
     return 1;
-
 }
