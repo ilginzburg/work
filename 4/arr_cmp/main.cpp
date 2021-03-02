@@ -7,7 +7,6 @@
 
 int main()
 {
-
     constexpr int SIZE_A = 30;
     constexpr int SIZE_B = 15;
     int A[SIZE_A];
@@ -30,9 +29,7 @@ int main()
     printf("\n");
 
     int k = findAbsndIdxs(A, SIZE_A, B, SIZE_B, absendIdxs);
-
-
     for(int j=0; j<k; ++j)
         printf("%d ",absendIdxs[j]);
-  printf("\n");
+    printf("\n");
 }

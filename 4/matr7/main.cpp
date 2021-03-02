@@ -8,8 +8,6 @@
 
 int main()
 {
-
-
     constexpr int SIZE = 7;
     srand (time(0));
     int matrix[SIZE][SIZE];
@@ -17,9 +15,7 @@ int main()
 
     for (int i=0; i<SIZE; ++i)
         for (int j=0; j<SIZE; ++j)
-          {
             matrix[i][j] = rand()%100;
-          }
 
 
     printf("\n\n\n\n");
@@ -30,7 +26,6 @@ int main()
     printf("\n\n\n");
 
     replaceRowCol((int *)matrix, k, SIZE);
-
 
     printf("\n\n\n");
 

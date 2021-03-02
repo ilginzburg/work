@@ -37,9 +37,6 @@ TEST (findAbsndIdxstest,test3)
  int c[10];
  findAbsndIdxs(a,  10,  b,  5, c);
 
- for(int j=0; j<10; ++j)
-     printf("%d ",c[j]);
-printf("\n");
 
  EXPECT_TRUE ((c[0] == 2) && (c[1] ==4) && (c[2] == 5) && (c[3] ==6)
             &&(c[4] == 7) && (c[5] ==8) && (c[6] ==9));
