@@ -20,6 +20,6 @@ int swapDigits(int n)
   msb = n/k;
   lsb = n%10;
 
-  int swapped = lsb*k+((n-lsb+msb)%k);
+  int swapped = lsb * k + ((n - lsb + msb) %k);
   return swapped;
 }
