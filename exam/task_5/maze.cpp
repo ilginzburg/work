@@ -3,75 +3,48 @@
 #include <stdlib.h>
 #include <time.h>
 
-int find (bool* arr, int x_size, int y_size, Point start, Point exit)
+int find (int* a_arr, int x_size, int y_size, Point start, Point exit)
 {
-     int routes = 100;     // Number of routes to be found
-     int steps_min   = 100;
-     int steps   = 0;
-     int start_x = start.x;
-     int start_y = start.y;
-
-     srand(time(NULL));
-     int direction = 0;
-
-    for(int k = routes; k > 0; --k)
+    if(*((a_arr+start.y*x_size)+start.x) == -2)
+        return 0;
+    int steps = 1;
+    *((a_arr+start.y*x_size)+start.x) = steps;
+    while (steps < x_size*y_size)
     {
-        while (!((start_x == exit.x) && (start_y == exit.y)))
+        for(int i=0; i<x_size; ++i)
         {
-          direction = rand() % 4;
-            switch (direction)
+            for(int j=0; j<y_size; ++j)
             {
-                case(0):// right
-                    if  ((start_x+1) < x_size)
-                    {
-                        if(*((arr+start_y*x_size)+start_x+1) == true)
-                        {
-                            start_x = start_x + 1;
-                            ++steps;
-                        }
-                    }
-                break;
+              if(*((a_arr+i*x_size)+j) == steps)
+                {
+                    if(((j+1) < x_size) &&(*((a_arr+i*x_size)+j+1) == -2)) //right
+                        return steps;
+                    if(((j+1) < x_size) &&(*((a_arr+i*x_size)+j+1) == 0))
+                        *((a_arr+i*x_size)+j+1) = steps + 1;
 
-                case(1):// down
-                    if  ((start_y+1) < y_size)
-                    {
-                        if(*((arr+(start_y+1)*x_size)+start_x) == true)
-                        {
-                            start_y = start_y + 1;
-                            ++steps;
-                        }
-                    }
-                break;
+                    if((j>0) &&(*((a_arr+i*x_size)+j-1) == -2)) //left
+                        return steps;
+                    if((j>0) &&(*((a_arr+i*x_size)+j-1) == 0))
+                        *((a_arr+i*x_size)+j-1) = steps + 1;
 
-                case(2):// left
-                    if  ((start_x) > 0)
-                    {
-                        if(*((arr+start_y*x_size)+start_x-1) == true)
-                        {
-                            start_x = start_x - 1;
-                            ++steps;
-                        }
-                    }
-                break;
+                    if((i>0) &&(*((a_arr+(i-1)*x_size)+j) == -2)) //up
+                        return steps;
+                    if((i>0) &&(*((a_arr+(i-1)*x_size)+j) == 0))
+                        *((a_arr+(i-1)*x_size)+j) = steps + 1;
 
-                case(3):// up
-                    if  ((start_y) > 0)
-                    {
-                        if(*((arr+(start_y-1)*x_size)+start_x) == true)
-                        {
-                            start_y = start_y - 1;
-                            ++steps;
-                        }
-                    }
-            }//switch
-        }
-       steps_min = (steps < steps_min) ? steps : steps_min;
-       steps = 0;
-       start_x = start.x;
-       start_y = start.y;
-    }//for
- return steps_min;
+                    if(((i+1) < y_size) &&(*((a_arr+(i+1)*x_size)+j) == -2)) //down
+                        return steps;
+                    if(((i+1) < y_size) &&(*((a_arr+(i+1)*x_size)+j) == 0))
+                        *((a_arr+(i+1)*x_size)+j) = steps + 1;
+                }
+            }
+         }//for
+        ++steps;
+     }//while
+ return steps;
 }
+
+
 
 
 void printArray (bool* arr, int x_size, int y_size)
@@ -87,6 +60,31 @@ void printArray (bool* arr, int x_size, int y_size)
 }
 
 
+void printAstarArray (int* arr, int x_size, int y_size)
+{
+    for(int i=0; i<x_size; ++i)
+    {
+        for(int j=0; j<y_size; ++j)
+        {
+            printf("%d  ",*((arr+i*x_size)+j));
+        }
+      printf("\n");
+    }
+}
 
 
+
+void fillArray (bool* arr, int* a_arr, int x_size, int y_size, Point exit)
+{
+    for(int i=0; i<x_size; ++i)
+        for(int j=0; j<y_size; ++j)
+           *((a_arr+i*x_size)+j) = *((arr+i*x_size)+j) ? 0 : -1;
+    *((a_arr+exit.y*x_size)+exit.x) = -2; // exit point
+}
+
+
+void deleteArray (int* a_arr)
+{
+    delete[] a_arr;
+}
 
