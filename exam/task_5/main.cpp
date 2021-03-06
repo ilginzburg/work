@@ -17,21 +17,32 @@ int main()
                       { true ,  false,  true ,  true , true  },
                       { true ,  true ,  false,  true,  false },
                       { true ,  true,   true ,  true , true  }};
+    int const x_size = 5;
+    int const y_size = 5;
+
     Point start;
     Point exit;
 
     start.x = 0;
     start.y = 0;
 
-    exit.x = 1;
-    exit.y = 0;
+    exit.x = 3;
+    exit.y = 4;
 
-    printf("In the boolean array:\n\n");
-    printArray ((bool*)arr, 5, 5);
-    int f = find((bool*)arr, 5, 5,  start,  exit );
+
+    int* a_arr = new int[x_size*y_size];
+    fillArray ((bool*)arr, (int*)a_arr, x_size, y_size, exit);
+
+    printf("In the boolean array:\n");
+    printArray ((bool*)arr, x_size, y_size);
+
+    int f = find((int*)a_arr, x_size, y_size, start, exit);
 
     printf("\n\nThe minimal number of steps between (%d, %d) and (%d, %d) is %d\n"
               ,start.x, start.y,exit.x, exit.y,f);
+
+    deleteArray ((int*)a_arr);
+    printf("\nArray deleted\n");
     return 0;
 }
 
